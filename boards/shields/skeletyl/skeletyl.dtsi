@@ -26,13 +26,6 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4)                             RC(2,9)  RC(
 	};
 };
 
-/*
- * R1 - x (21)
- * R2 (R0) - 18
- * R3 (R1) - 5
- * R4 (R2) - 4
- * R5 (R3) - 9
- */
 &kscan0 {
 	row-gpios = <&pro_micro_d 18 (GPIO_ACTIVE_HIGH)>,
 	            <&pro_micro_a 5 (GPIO_ACTIVE_HIGH)>,

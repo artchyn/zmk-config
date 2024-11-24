@@ -12,6 +12,4 @@
 
 		diode-direction = "row2col";
 	};
-
-	// TODO: RGB node(s)
 };
