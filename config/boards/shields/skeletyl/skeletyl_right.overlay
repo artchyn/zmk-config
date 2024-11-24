@@ -1,15 +1,22 @@
 #include "skeletyl.dtsi"
 
+/* # on board (# my config)
+ * C1 - x ()
+ * C2 (C9) - 21
+ * C3 (C8) - 10
+ * C4 (C7) - 6
+ * C5 (C6) - 7
+ * C6 (C5) - 8
+ */
+
 &default_transform {
 	col-offset = <5>;
 };
 
 &kscan0 {
-	col-gpios
-		= <&pro_micro_d 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro_d 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro_d 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro_d  5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro_d  7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		;
+	col-gpios = <&pro_micro_d 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&pro_micro_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+	            <&pro_micro_d  6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+	            <&pro_micro_d  7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+	            <&pro_micro_d  8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 };
