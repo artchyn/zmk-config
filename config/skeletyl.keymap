@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
+#define NUM 1
 
 &lt {
   tapping-term-ms = <300>;
@@ -14,40 +15,27 @@
   continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
 };
 
-/ {
-  chosen {
-    zmk,matrix_transform = &default_transform;
-  };
+&keymap {
+    compatible = "zmk,keymap";
 
-  behaviors {
-    hm: homerow_mods {
-      compatible = "zmk,behavior-hold-tap";
-      label = "HOMEROW_MODS";
-      #binding-cells = <2>;
-      tapping-term-ms = <300>;
-      quick_tap_ms = <300>;
-      flavor = "tap-preferred";
-      bindings = <&kp>, <&kp>;
+    // Default Layer
+    default_layer {
+        bindings = <
+            &kp Q      &kp W        &kp F          &kp P          &kp B            &kp J        &kp L        &kp U        &kp Y       &kp SQT
+            &hm LGUI A &hm LALT R   &hm LCTRL S    &hm LSHFT T    &kp G            &kp M        &hm RSHFT N  &hm RCTRL E  &hm LALT I  &hm RGUI O
+            &kp Z      &kp X        &kp C          &kp D          &kp V            &kp K        &kp H        &kp COMMA    &kp DOT     &kp FSLH
+                                    &lt ESC        &lt SPACE      &lt TAB          &lt RET      &lt BSPC     &lt DEL
+        >;
     };
-    u_caps_word: u_caps_word {
-      compatible = "zmk,behavior-mod-morph";
-      label = "u_caps_word";
-      #binding-cells = <0>;
-      bindings = <&caps_word>, <&kp CAPS>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-  };
 
-  keymap {
-        compatible = "zmk,keymap";
+    // NUM Layer (example for numeric layer)
+    num_layer {
+        bindings = <
+            &kp 7   &kp 8   &kp 9   &trans  &trans      &trans  &trans  &trans  &trans  &trans
+            &kp 4   &kp 5   &kp 6   &trans  &trans      &trans  &trans  &trans  &trans  &trans
+            &kp 1   &kp 2   &kp 3   &trans  &trans      &trans  &trans  &trans  &trans  &trans
+                            &trans  &trans  &trans      &trans  &trans  &trans
 
-        default_layer {
-            bindings = <
-	&kp Q      &kp W        &kp F          &kp P          &kp B            &kp J        &kp L        &kp U        &kp Y       &kp SQT
-	&hm LGUI A &hm LALT R   &hm LCTRL S    &hm LSHFT T    &kp G            &kp M        &hm RSHFT N  &hm RCTRL E  &hm LALT I  &hm RGUI O
-	&kp Z      &kp X        &kp C          &kp D          &kp V            &kp K        &kp H        &kp COMMA    &kp DOT     &kp FSLH
-	                        &lt ESC        &lt SPACE      &lt TAB          &lt RET      &lt BSPC     &lt DEL
-            >;
-        };
+        >;
     };
 };
