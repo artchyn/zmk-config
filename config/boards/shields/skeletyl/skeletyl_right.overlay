@@ -1,0 +1,29 @@
+#include "skeletyl.dtsi"
+
+&default_transform {
+	col-offset = <5>;
+};
+
+&skeletyl_transform {
+	col-offset = <5>;
+};
+
+&kscan0 {
+	col-gpios
+		= <&pro_micro_d 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		, <&pro_micro_d 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		, <&pro_micro_d 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		, <&pro_micro_d  5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		, <&pro_micro_d  7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		;
+};
+
+//  / {
+//      leds {
+//          compatible = "worldsemi,ws2812-spi";
+//          label = "RGB";
+//          chain-length = <18>;            // Number of LEDs
+//          spi-max-frequency = <2400000>;  // Frequency for SPI communication
+//          gpio-pin = <&gpio0 1 GPIO_ACTIVE_HIGH>; // Adjust to match your PCB design
+//      };
+//  };
