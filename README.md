@@ -9,8 +9,8 @@ Zmk config for [Skeletyl](https://github.com/Bastardkb/Skeletyl/) keyboard with
 
 ```
 on the board (my config)
-C1 - x (20)
-C2 (C0) - 21
+C1 - x (19)
+C2 (C0) - 20
 C3 (C1) - 10
 C4 (C2) - 6
 C5 (C3) - 7
@@ -21,8 +21,8 @@ C6 (C4) - 8
 
 ```
 on the board (my config)
-C1 - x ()
-C2 (C9) - 21
+C1 - x (19)
+C2 (C9) - 20
 C3 (C8) - 10
 C4 (C7) - 6
 C5 (C6) - 7
